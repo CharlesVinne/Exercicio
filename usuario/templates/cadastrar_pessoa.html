@@ -1,8 +1,10 @@
-  
+  {% extends 'base.html' %}
+  {% block body %}
 {{msg}}
 
 <h1>Criar Pessoa</h1>
 <form method="POST" action="/">
+  {% csrf_token %}
   <input type="text" name="nome" placeholder="Nome" required>
   <input type="text" name="cpf" placeholder="CPF">
   <input type="email" name="email" placeholder="E-mail">
@@ -15,3 +17,4 @@
   
   <input type="submit" value="Cadastrar">
 </form>
+{% endblock %}
