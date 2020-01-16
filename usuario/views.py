@@ -36,3 +36,12 @@ def login(request):
     return render(request, 'login.html', {'msg': 'Ops, não encontramos'})
 
   return render(request, 'login.html', {'msg': 'seja bem vindo'})
+
+def deletar(request, id):
+  pessoa = Pessoa.objects.get(id=id)
+
+  args = {
+    'pessoa':pessoa
+  }
+  pessoa.deletar()
+  return render(request, 'deletar.html', args)
