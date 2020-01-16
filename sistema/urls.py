@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from usuario.views import login, mostrar_pessoas, mostrar_formulario_cadastro
+from usuario.views import login, mostrar_pessoas, mostrar_formulario_cadastro, deletar
 urlpatterns = [
+    path('deletar/<int:id>', deletar),
     path('login/', login),
     path('pessoas/', mostrar_pessoas),
     path('', mostrar_formulario_cadastro),

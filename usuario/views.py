@@ -43,5 +43,5 @@ def deletar(request, id):
   args = {
     'pessoa':pessoa
   }
-  pessoa.deletar()
+  pessoa.delete()
   return render(request, 'deletar.html', args)
