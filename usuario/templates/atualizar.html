@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block body %}
+
+    <section> 
+        <h1>Atualizar</h1>
+        {% if pessoa %}
+    <form method="POST">
+        
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button></button>
+    </form>  
+    </section>
+
+{% endblock %}
