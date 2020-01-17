@@ -1,16 +1,16 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block body %}
 
-    <section> 
-        <h1>Atualizar</h1>
-        {% if pessoa %}
+<section> 
+    <h1>Atualizar</h1>
+    {% if pessoa %}
     <form method="POST">
-        
-            {% csrf_token %}
-            {{form.as_p}}
+    {% csrf_token %}
+        {{form.as_p}}
 
-            <button></button>
-    </form>  
+        <a href="../atualizar/{{pessoa.id}}"><button>Atualizar</button></a>
+    </form> 
+    {% endif %} 
     </section>
 
 {% endblock %}

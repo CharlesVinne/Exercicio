@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Pessoa
 from .forms import PessoaForm
 
@@ -34,18 +34,17 @@ def login(request):
   
 def atualizar(request, id):
   pessoa = Pessoa.objects.get(id=id)
-  
   form = PessoaForm(request.POST or None, instance=pessoa)
 
   if form.is_valid():
     form.save()
-    return redirect(f'../detail/{pessoa.id}') 
+    return redirect(f'../pessoas/')    # o método redirect só redireciona para outra página
 
-    args = {
-      'pessoa': pessoa,
-      'form': form
-    }
-    return render(request, 'pessoas.html', args)
+  args = {
+    'pessoa': pessoa,
+    'form': form
+  }
+  return render(request, 'atualizar.html', args) # o método render renderiza a página, ou seja recarrega a página com a informacao.
 
 
 

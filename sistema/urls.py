@@ -19,9 +19,9 @@ from usuario import views
 
 urlpatterns = [
 
-    path('login', views.login),
+    path('login/', views.login),
     path('', views.mostrar_formulario_cadastro),
-    path('pessoas', views.mostrar_pessoas),
-    path('admin', admin.site.urls),
+    path('pessoas/', views.mostrar_pessoas),
+    path('admin/', admin.site.urls),
     path('atualizar/<int:id>', views.atualizar),
 ]
