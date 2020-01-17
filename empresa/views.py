@@ -14,3 +14,10 @@ def cadastro(request):
         form.save()
         args['msg',] = 'Cadastro Realizado Com Sucesso'
     return render(request, 'cadastro.html', args)
+def deletar(request):
+    empresa = Empresa.objects.get(id=id)
+    args = {
+        'empresa': empresa
+    }
+    empresa.delete()
+    return render(request, 'deletar.html', args)
