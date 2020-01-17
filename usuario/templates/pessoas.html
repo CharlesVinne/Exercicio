@@ -3,6 +3,7 @@
 
 <h4>Pessoas</h4>
 
+{% for pessoa in dados %}
   <div>
     <p>Nome: {{pessoa.nome}}</p>
     <p>CPF: {{pessoa.cpf}}</p>
@@ -11,4 +12,5 @@
     <p>Genero: {{pessoa.genero}}</p>
   </div>
   <hr>
+{% endfor %}
 {% endblock body %}
