@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from usuario.views import login, mostrar_formulario_cadastro, mostrar_pessoas
+from empresa.views import cadastro
 
 urlpatterns = [
 
+    path('cadastro/', cadastro),
     path('login/', login),
     path('', mostrar_formulario_cadastro),
     path('pessoas/', mostrar_pessoas),
