@@ -14,3 +14,18 @@ def cadastro(request):
         form.save()
         args['msg',] = 'Cadastro Realizado Com Sucesso'
     return render(request, 'cadastro.html', args)
+
+def atualizar(request, id):
+    empresa = empresa.objects.get(id=id)
+    form = EmpresaForm(request.POST or None, empresa)
+
+    if form.is_valid():
+        form.save()
+        return redirect(f'../atualizar/{atualizar.id}')
+
+    args = {
+        'empresa':empresa,
+        'form':form
+    }
+    return render(request, 'atualizar.html', args)
+
