@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from usuario.views import login, mostrar_formulario_cadastro, mostrar_pessoas
-from empresa.views import cadastro, atualizar
+from empresa.views import cadastro, atualizar, deletar
 
 urlpatterns = [
-
+    path('deletar/<int:id>', deletar),
     path('atualizar/<int:id>', atualizar),
     path('cadastro/', cadastro),
     path('login/', login),

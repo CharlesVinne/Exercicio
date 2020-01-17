@@ -29,3 +29,10 @@ def atualizar(request, id):
     }
     return render(request, 'atualizar.html', args)
 
+def deletar(request):
+    empresa = Empresa.objects.get(id=id)
+    args = {
+        'empresa': empresa
+    }
+    empresa.delete()
+    return render(request, 'deletar.html', args)
